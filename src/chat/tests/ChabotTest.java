@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import chat.model.Chatbot;
 
-public class ChabotTest
+public class ChabotTest//how about here
 {
 	private Chatbot testedBot;
 
@@ -110,5 +110,5 @@ public class ChabotTest
 		assertTrue("The responseList is not properly built by the constructor", testedBot.getResponseList().size() > 15);
 		assertTrue("The spookyList is not properly built by the constructor", testedBot.getSpookyList().size() > 8);
 	}
-
+//is this all here?
 }

@@ -86,7 +86,7 @@ package chat.model;
 	{
 		String output = "";
 		output += "You said: "  + userText;
-		
+					//put you said here? where else would it be?
 		
 		return output;
 	}
