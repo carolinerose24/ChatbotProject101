@@ -75,7 +75,7 @@ package chat.model;
 		buildTheLists();
 	}
 	
-	public Chatbot(String content, String joke, String currentUser, String name, ArrayList<String> responseList, ArrayList<String> spookyList)
+	public Chatbot(String content)//, String joke, String currentUser, String name, ArrayList<String> responseList, ArrayList<String> spookyList)
 	{
 		this.currentUser = currentUser;
 		this.joke = joke;
@@ -87,7 +87,7 @@ package chat.model;
 	
 	public String processText (String userInput1)
 	{
-		
+		//there is a bunch of legitimacy checker kind of things right here!!!!
 		
 		
 		
@@ -204,6 +204,15 @@ package chat.model;
 	{
 		this.spookyList = spookyList; 
 	}
+	
+	
+	
+	
+	//to make a method
+	//Plain sentences
+	//Break it down
+	//Pseudocode--half sentences/half code
+	//Actual code
 	
 	
  }
