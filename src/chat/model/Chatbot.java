@@ -51,6 +51,7 @@ package chat.model;
 	}
 	
 	
+
 	
 	public Chatbot() //default  constructor to avoid error/crash
 	{ //THIS WAY WORKS
@@ -58,6 +59,8 @@ package chat.model;
 //		joke = "your face";
 //		content = "  ";
 //		name = "what is this one for? I don't know.";
+		
+
 		
 		//you could also do it this way
 		this.name = "bananaaaa"; //or do it this way
@@ -72,7 +75,7 @@ package chat.model;
 		buildTheLists();
 	}
 	
-	public Chatbot(String currentUser, String joke, String content, String name, ArrayList responseList, ArrayList spookyList)
+	public Chatbot(String content, String joke, String currentUser, String name, ArrayList<String> responseList, ArrayList<String> spookyList)
 	{
 		this.currentUser = currentUser;
 		this.joke = joke;
@@ -82,13 +85,68 @@ package chat.model;
 		this.spookyList = spookyList;
 	}
 	
-	public String processText (String userText)
+	public String processText (String userInput1)
 	{
+		
+		
+		
+		
+		
+		
 		String output = "";
-		output += "You said: "  + userText;
+		output += "Chatbot said: "  + userInput1;
 					//put you said here? where else would it be?
 		
 		return output;
+	}
+	//java -visibility, return type, name, parameters
+	//swift- public func legitimacyChecker (input : String) -> Bool
+	//swift- visibility func name (parameters) -> return type
+	public boolean legitimacyChecker (String userInput)
+	{
+		boolean isValid = false;
+		if (userInput == null)
+		{
+			isValid = false;
+		}
+		else if (userInput.equals(""))
+		{
+			isValid = false;
+		}
+		else if (userInput.contains("sdf") || userInput.contains("jkl") )		
+		{
+			isValid = false;
+		}
+		else if (userInput.length() < 2)
+		{
+			isValid = false;
+		}
+		else
+		{
+			isValid = true;
+		}
+		
+		return isValid;
+	}
+	
+	public boolean spookyChecker (String userInput)
+	{
+//		if ()
+//		{
+//			
+//		}
+		
+		return true;
+	}
+	
+	public boolean contentChecker (String userInput)
+	{
+//		if ()
+//		{
+//			
+//		}
+		
+		return true;
 	}
 	
 	
