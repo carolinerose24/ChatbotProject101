@@ -46,7 +46,7 @@ import java.util.*;
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
 		String chatbotSays = simplebot.processText(userInput1);
-		userInput1 = "You said; " + userInput1;
+		userInput1 = "You said: " + userInput1;
 		JOptionPane.showMessageDialog(null, userInput1);
 	//	return userInput1;
 		return  chatbotSays;
@@ -59,6 +59,6 @@ import java.util.*;
 		return null;
 	}
 	
-	//does the controller work?
+
 	
 }

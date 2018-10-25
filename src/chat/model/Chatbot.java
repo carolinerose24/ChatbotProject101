@@ -89,13 +89,14 @@ package chat.model;
 	{
 		//there is a bunch of legitimacy checker kind of things right here!!!!
 		
-		
+		//learn about printf!!!! for the tests mta test
 		
 		
 		
 		String output = "";
-		output += "Chatbot said: "  + userInput1;
-					//put you said here? where else would it be?
+		output += "You said: "  + userInput1;
+		String chatbotSays = "Chatbot says: " + userInput1;
+					
 		
 		return output;
 	}
@@ -131,22 +132,46 @@ package chat.model;
 	
 	public boolean spookyChecker (String userInput)
 	{
-//		if ()
-//		{
-//			
-//		}
+		boolean isValid = true;
+		if (userInput.contains("Halloween"))
+		{
+			isValid = true;
+		}
+		else if(userInput.equalsIgnoreCase("Easter"))
+		{
+			isValid = false;
+		}
 		
-		return true;
+		return isValid;
 	}
 	
 	public boolean contentChecker (String userInput)
 	{
-//		if ()
-//		{
-//			
-//		}
+		boolean isValid = true;
+		//String text = "";
+		if (userInput.equals(""))
+		{
+			isValid = false;
+		}
+		else if(userInput.contains("text" + content + "text" ))
+		{
+			isValid = false;
+		}
+		else if (userInput.contains("text" + content))
+		{
+			isValid = false;
+		}
+		else if (userInput.contains(content + "text"))
+		{
+			isValid = false;
+		}
 		
-		return true;
+		if (userInput.contains("You said the special words"))
+		{
+			isValid = true;
+		}
+		
+		return isValid;
 	}
 	
 	
