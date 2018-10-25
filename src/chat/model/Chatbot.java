@@ -87,17 +87,14 @@ package chat.model;
 	
 	public String processText (String userInput1)
 	{
-		//there is a bunch of legitimacy checker kind of things right here!!!!
 		
 		//learn about printf!!!! for the tests mta test
-		
-		
-		
-		String output = "";
-		output += "You said: "  + userInput1;
-		String chatbotSays = "Chatbot says: " + userInput1;
+
+
+//		String chatbotSays = "Chatbot says: " + userInput1;
 					
-		
+		String output = "";
+		output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + contentChecker(content) + "\"";
 		return output;
 	}
 	//java -visibility, return type, name, parameters
