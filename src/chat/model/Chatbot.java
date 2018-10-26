@@ -44,7 +44,7 @@ package chat.model;
 		spookyList.add("I see dead people.");
 		spookyList.add("He was dead the whole time!");
 		spookyList.add("It's alive! It's ALIVE!");
-		spookyList.add(" Don't blink. Blink and you're dead. They are fast. Faster than you can believe. Don't turn your back. Don't look away. And don't blink. Good Luck.");
+		spookyList.add("Don't blink. Blink and you're dead. They are fast. Faster than you can believe. Don't turn your back. Don't look away. And don't blink. Good Luck.");
 		spookyList.add("Hey, who turned out the lights?");
 		spookyList.add("Are you going to shoot me like a naughtly little boy, or fight me like a man?");
 		spookyList.add("Donald Trump");
@@ -94,7 +94,12 @@ package chat.model;
 //		String chatbotSays = "Chatbot says: " + userInput1;
 					
 		String output = "";
-		output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + contentChecker(content) + "\"";
+		output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + (content) + "\"";
+		if (contentChecker(content))
+		{
+			output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + (content) + "\"" + "You said the special words!";
+		}
+		
 		return output;
 	}
 	//java -visibility, return type, name, parameters
