@@ -136,14 +136,13 @@ package chat.model;
 	{
 		boolean isValid = true;
 		for (String phrase: spookyList)
-		{
-			
+		{	
 		
 		if (userInput.contains("Halloween"))
 		{
 			isValid = true;
 		}
-		else if(userInput.equalsIgnoreCase("Easter"))
+		else if(userInput.contains("Easter"))
 		{
 			isValid = false;
 		}
