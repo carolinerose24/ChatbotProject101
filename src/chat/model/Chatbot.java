@@ -94,10 +94,10 @@ package chat.model;
 //		String chatbotSays = "Chatbot says: " + userInput1;
 					
 		String output = "";
-		output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + (content) + "\"";
+		output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"";
 		if (contentChecker(content))
 		{
-			output = "You said: \" "  + userInput1 + "\"" + "Chatbot says: \"" + (content) + "\"" + "You said the special words!";
+			output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"" + "You said the special words!";
 		}
 		
 		return output;
