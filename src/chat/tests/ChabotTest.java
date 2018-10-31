@@ -61,7 +61,7 @@ public class ChabotTest//how about here
 	public void testSpookyChecker()
 	{
 		assertTrue("Halloween should return true", testedBot.spookyChecker("Halloween"));
-		for (String phrase : testedBot.getSpookyList())
+		for (String phrase : testedBot.getSpookyList())//for each- has to do it to ALL the things
 		{
 			assertTrue("Every item in the spookyList should pass the spookyChecker method", testedBot.spookyChecker(phrase));
 		}

@@ -135,6 +135,10 @@ package chat.model;
 	public boolean spookyChecker (String userInput)
 	{
 		boolean isValid = true;
+		for (String phrase: spookyList)
+		{
+			
+		
 		if (userInput.contains("Halloween"))
 		{
 			isValid = true;
@@ -143,9 +147,11 @@ package chat.model;
 		{
 			isValid = false;
 		}
-		
+		}
 		return isValid;
+		
 	}
+		
 	
 	public boolean contentChecker (String userInput)
 	{
