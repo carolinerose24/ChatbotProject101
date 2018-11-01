@@ -32,12 +32,13 @@ import java.util.*;
 		
 	public void start()
 	{
-		String userInput = "banana";
-		
-		while (!userInput.equalsIgnoreCase("quit"))  //user input != to quit
+		String userInput1 = "banana";
+	//	String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
+
+		while (!userInput1.equalsIgnoreCase("quit"))  //user input != to quit
 		{
 				//userText1 = JOptionPane.showInputDialog(null, "Type 'quit' to exit.");
-			userInput = interactWithChatbot(userInput);
+			userInput1 = interactWithChatbot(userInput1);
 		}
 	}
 	
@@ -46,8 +47,8 @@ import java.util.*;
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
 		String chatbotSays = simplebot.processText(userInput1);
-		userInput1 = "You said: " + userInput1;
-		JOptionPane.showMessageDialog(null, userInput1);
+		chatbotSays = "You said: " + userInput1 ;
+		JOptionPane.showMessageDialog(null, chatbotSays);
 	//	return userInput1;
 		return  chatbotSays;
 		
@@ -56,7 +57,7 @@ import java.util.*;
 	
 	public String useChatbotCheckers(String text)
 	{
-		return null;
+		return text;
 	}
 	
 

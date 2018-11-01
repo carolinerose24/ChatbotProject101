@@ -48,6 +48,7 @@ package chat.model;
 		spookyList.add("Hey, who turned out the lights?");
 		spookyList.add("Are you going to shoot me like a naughtly little boy, or fight me like a man?");
 		spookyList.add("Donald Trump");
+		spookyList.add("No more sugar cookies for you Santa, you're gonna eat your words!");
 	}
 	
 	
@@ -79,7 +80,11 @@ package chat.model;
 	{
 		this.currentUser = currentUser;
 		this.joke = joke;
+		
+		
 		this.content = content;
+		
+		
 		this.name = name;
 		this.responseList = responseList;
 		this.spookyList = spookyList;
