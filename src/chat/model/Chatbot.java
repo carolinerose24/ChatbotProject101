@@ -159,21 +159,27 @@ package chat.model;
 	
 	public boolean contentChecker (String userInput)
 	{
+		//must use index of (first index is 0) , substring
 		boolean isValid = true;
 		//String text = "";
-		if (userInput.equals(""))
+		if (userInput.equals(content))
+		{
+			isValid = true;
+		}
+		
+		else if (userInput.equals(""))
 		{
 			isValid = false;
 		}
-		else if(userInput.contains("text" + content + "text" ))
+		else if(userInput.contains(" " + content + " " ))
+		{
+			isValid = true;
+		}
+		else if (userInput.contains(" " + content)) //&& userInput.indexOf(userInput.length()-1))//&& is the last index?
 		{
 			isValid = false;
 		}
-		else if (userInput.contains("text" + content))
-		{
-			isValid = false;
-		}
-		else if (userInput.contains(content + "text"))
+		else if (userInput.contains(content + " "))//&& is the first index?
 		{
 			isValid = false;
 		}
