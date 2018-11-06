@@ -1,18 +1,23 @@
 package chat.controller;
+
 import java.util.*;
- import javax.swing.JOptionPane;
- import chat.model.Chatbot;
- public class ChatController
+import javax.swing.JOptionPane;
+import chat.model.Chatbot;
+
+public class ChatController
 {
 	private Chatbot simplebot;
 	private Chatbot chatbot;
-	public ChatController() 
+
+	public ChatController()
 	{
-		simplebot = new Chatbot();//default constructor
+		simplebot = new Chatbot();// default constructor
 		chatbot = new Chatbot();
 	}
-	//refactoring -- rewriting + adding more things -> make it work better
-	//umlet -- like an api because it gives headers but not the code inside
+	// refactoring -- rewriting + adding more things -> make it work better
+	// umlet -- like an api because it gives headers but not the code inside
+
+	// command a, command shift f
 	public Chatbot getSimplebot()
 	{
 		return simplebot;
@@ -22,54 +27,52 @@ import java.util.*;
 	{
 		return chatbot;
 	}
-	
-	
+
 	public void setSimplebot(Chatbot simplebot)
 	{
 		this.simplebot = simplebot;
 	}
-	
-		
+
 	public void start()
 	{
 		String userInput1 = "banana";
-	//	String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
+		// String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want
+		// to talk about?");
 
-		while (!userInput1.equalsIgnoreCase("quit"))  //user input != to quit
+		while (!userInput1.equalsIgnoreCase("quit")) // user input != to quit
 		{
-				//userText1 = JOptionPane.showInputDialog(null, "Type 'quit' to exit.");
+			// userText1 = JOptionPane.showInputDialog(null, "Type 'quit' to exit.");
 			userInput1 = interactWithChatbot(userInput1);
 		}
 	}
-	
+
 	public String interactWithChatbot(String text)
 	{
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
-		if (userInput1 == null)
-		{
-			JOptionPane.showMessageDialog(null, "null was supplied.");
-		}
+		String chatbotSays = simplebot.processText(userInput1);
+
 		if (text == null)
 		{
-			JOptionPane.showMessageDialog(null, "null was supplied.");
+			userInput1 = "null";
 		}
 		
-		String chatbotSays = simplebot.processText(userInput1);
-		chatbotSays = "You said: " + userInput1 ;
-		JOptionPane.showMessageDialog(null, chatbotSays);
-	//	return userInput1;
-		return  chatbotSays;
-		
+
+		userInput1 += "You said: " + userInput1;
+		JOptionPane.showMessageDialog(null, userInput1);
+		// return userInput1;
+		return userInput1;
 
 	}
-	
+
 	public String useChatbotCheckers(String text)
 	{
-		
+		if (text.equalsIgnoreCase("spooky"))
+		{
+				text = "Halloween";
+		}
+
 		return text;
 	}
-	
 
-	
 }

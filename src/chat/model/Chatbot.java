@@ -115,6 +115,8 @@ package chat.model;
 	//java -visibility, return type, name, parameters
 	//swift- public func legitimacyChecker (input : String) -> Bool
 	//swift- visibility func name (parameters) -> return type
+	
+	
 	public boolean legitimacyChecker (String userInput)
 	{
 		boolean isValid = false;
@@ -182,7 +184,7 @@ package chat.model;
 		{
 			isValid = false;
 		}
-		else if (userInput.contains("text" + content)) //&& userInput.indexOf(userInput.length()-1))//&& is the last index?
+		else if (userInput.contains("text" + content)) //&& userInput.indexOf(userInput.length()-1 == content.length()))//&& is the last index?
 		{
 			isValid = false;
 		}
