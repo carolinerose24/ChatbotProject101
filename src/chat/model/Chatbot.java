@@ -171,15 +171,15 @@ package chat.model;
 		{
 			isValid = false;
 		}
-		else if(userInput.contains(" " + content + " " ))
-		{
-			isValid = true;
-		}
-		else if (userInput.contains(" " + content)) //&& userInput.indexOf(userInput.length()-1))//&& is the last index?
+		else if(userInput.contains("text" + content + "text" ))
 		{
 			isValid = false;
 		}
-		else if (userInput.contains(content + " "))//&& is the first index?
+		else if (userInput.contains("text" + content)) //&& userInput.indexOf(userInput.length()-1))//&& is the last index?
+		{
+			isValid = false;
+		}
+		else if (userInput.contains(content + "text"))//&& is the first index?
 		{
 			isValid = false;
 		}
