@@ -81,7 +81,7 @@ public class ChabotTest//how about here
 	@Test
 	public void testContentChecker()
 	{
-		assertTrue("The content checker should definitly find the value", testedBot.contentChecker(testedBot.getContent()));
+		assertTrue("The content checker should definitely find the value", testedBot.contentChecker(testedBot.getContent()));
 		assertFalse("The content in middle of another word is NOT the special content", testedBot.contentChecker("text" + testedBot.getContent() + "text"));
 		assertFalse("The content after another word is NOT the special content", testedBot.contentChecker("text" + testedBot.getContent()));
 		assertFalse("The content in front of another word is NOT the special content", testedBot.contentChecker(testedBot.getContent() + "text"));
@@ -110,5 +110,5 @@ public class ChabotTest//how about here
 		assertTrue("The responseList is not properly built by the constructor", testedBot.getResponseList().size() > 15);
 		assertTrue("The spookyList is not properly built by the constructor", testedBot.getSpookyList().size() > 8);
 	}
-//is this all here?
+
 }

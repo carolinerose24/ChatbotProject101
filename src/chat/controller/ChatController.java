@@ -46,6 +46,15 @@ import java.util.*;
 	{
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
+		if (userInput1 == null)
+		{
+			JOptionPane.showMessageDialog(null, "null was supplied.");
+		}
+		if (text == null)
+		{
+			JOptionPane.showMessageDialog(null, "null was supplied.");
+		}
+		
 		String chatbotSays = simplebot.processText(userInput1);
 		chatbotSays = "You said: " + userInput1 ;
 		JOptionPane.showMessageDialog(null, chatbotSays);
@@ -57,6 +66,7 @@ import java.util.*;
 	
 	public String useChatbotCheckers(String text)
 	{
+		
 		return text;
 	}
 	

@@ -65,8 +65,8 @@ package chat.model;
 		
 		//you could also do it this way
 		this.name = "bananaaaa"; //or do it this way
-		this.currentUser = new String ("BaNAnaAnas");
-		this.content = new String ("What a turnout!");
+		this.currentUser = new String ("What a turnout!");
+		this.content = new String ("sharknado");
 		this.name = new String ("not null");
 	
 		//initialize lists:
@@ -96,12 +96,17 @@ package chat.model;
 		//learn about printf!!!! for the tests mta test
 
 
-//		String chatbotSays = "Chatbot says: " + userInput1;
 					
 		String output = "";
 		output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"";
-		if (contentChecker(content))
+
+		if (userInput1 == null)
 		{
+			userInput1 = " ";
+		}
+		else if (contentChecker(userInput1)) //not content?
+		{
+	//		output += " You said the specials words. \n" ; //  \t = tab
 			output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"" + "You said the special words!";
 		}
 		
@@ -157,7 +162,7 @@ package chat.model;
 	}
 		
 	
-	public boolean contentChecker (String userInput)
+	public boolean contentChecker (String userInput) //userinput is just a random variable-doesn't relate to userInput1
 	{
 		//must use index of (first index is 0) , substring
 		boolean isValid = true;
@@ -165,8 +170,10 @@ package chat.model;
 		if (userInput.equals(content))
 		{
 			isValid = true;
+
 		}
 		
+
 		else if (userInput.equals(""))
 		{
 			isValid = false;
@@ -184,9 +191,11 @@ package chat.model;
 			isValid = false;
 		}
 		
-		if (userInput.contains("You said the special words"))
+		else if (userInput.contains("You said the special words"))
 		{
 			isValid = true;
+//			String output = "You said: \" "  + userInput + "\"" + " Chatbot says: \"" + (content) + "\"" + "You said the special words!";
+
 		}
 		
 		return isValid;
