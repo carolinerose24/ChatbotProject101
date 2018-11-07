@@ -57,7 +57,7 @@ public class ChatController
 			userInput1 = "null";
 		}
 		
-
+//constructors initialize data members
 		userInput1 += "You said: " + userInput1;
 		JOptionPane.showMessageDialog(null, userInput1);
 		// return userInput1;
