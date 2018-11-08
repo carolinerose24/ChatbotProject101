@@ -96,9 +96,10 @@ package chat.model;
 		//learn about printf!!!! for the tests mta test
 
 
-					
+		int randomIndex = (int)(Math.random() * responseList.size());
 		String output = "";
-		output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"";
+		output = "You said: \" "  + userInput1 + "\"" + " \nChatbot says: \"" + (responseList.get(randomIndex)) + "\"";
+	//	put	chatbotSays1 = (int)(Math.random() * responseList.size());
 
 		if (userInput1 == null)
 		{

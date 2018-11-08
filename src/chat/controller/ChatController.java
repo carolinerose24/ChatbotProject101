@@ -51,7 +51,9 @@ public class ChatController
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
 		String chatbotSays = simplebot.processText(userInput1);
-
+		
+	//	chatbotSays += (int)(Math.random() * responseList.size());
+		
 		if (text == null)
 		{
 			userInput1 = "null";
