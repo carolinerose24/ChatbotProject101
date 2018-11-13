@@ -3,6 +3,7 @@ package chat.model;
  import javax.swing.JOptionPane;
  public class Chatbot
 {
+	 //data, constructor, methods
 	
 	ArrayList <String> responseList = new ArrayList<String>();
 	ArrayList <String> spookyList = new ArrayList<String>();
