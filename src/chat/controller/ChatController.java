@@ -3,21 +3,32 @@ package chat.controller;
 import java.util.*;
 import javax.swing.JOptionPane;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
+
 
 public class ChatController
 {
 	private Chatbot simplebot;
 	private Chatbot chatbot;
+	private ChatFrame appFrame;
+	
 
 	public ChatController()
 	{
 		simplebot = new Chatbot();// default constructor
 		chatbot = new Chatbot();
+		this.appFrame = new ChatFrame (this);
 	}
 	// refactoring -- rewriting + adding more things -> make it work better
 	// umlet -- like an api because it gives headers but not the code inside
 
 	// command a, command shift f
+	//--------------------------------------getters/setters-------------------------
+	public ChatFrame getAppFrame()
+	{
+		return appFrame;
+	}
+	
 	public Chatbot getSimplebot()
 	{
 		return simplebot;
@@ -27,12 +38,17 @@ public class ChatController
 	{
 		return chatbot;
 	}
+	
+	public void setAppFrame(ChatFrame appFrame)
+	{
+		this.appFrame = appFrame;
+	}
 
 	public void setSimplebot(Chatbot simplebot)
 	{
 		this.simplebot = simplebot;
 	}
-
+//---------------------------------------------methods----------------------
 	public void start()
 	{
 		String userInput1 = "banana";
