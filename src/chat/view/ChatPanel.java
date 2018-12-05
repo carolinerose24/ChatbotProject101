@@ -5,7 +5,7 @@ import javax.swing.*;
 import chat.controller.ChatController;
 
 import java.awt.Color;
-
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -50,18 +50,20 @@ public class ChatPanel extends JPanel
 	
 	private void setUpPanel()
 	{
-	
-		this.add(chatField);
-		this.add(chatArea);
-		this.add(chatPane);
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800,600));
+		this.setBackground(Color.lightGray);
 		
+		this.add(chatField);
+		this.add(chatPane);
+		//do not add chatArea because it is in the scroll pane
 
 		this.add(ChatButton);
 		this.add(CheckerButton);
 		this.add(LoadButton);
 		this.add(SaveButton);
 		
-		this.setLayout(appLayout);
+
 	}
 	
 	private void setUpLayout()
@@ -107,12 +109,12 @@ public class ChatPanel extends JPanel
 	
 	private void setUpScrollPane()
 	{
-		chatArea.setEditable(false);
-		chatArea.setLineWrap(true);
-		chatArea.setWrapStyleWord(true);
+		chatArea.setEditable(false); //only for display, cannot grab stuff from it
+		chatArea.setLineWrap(true); //wraps- when hits edge, wraps back around
+		chatArea.setWrapStyleWord(true); //wraps as words not just random letters
 		
-		chatPane.setViewportView(chatArea);
-		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatPane.setViewportView(chatArea); //put text in the chat area 
+		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);//bc of word wrap
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
 		
 	}
