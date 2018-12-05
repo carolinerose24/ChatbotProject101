@@ -18,7 +18,7 @@ public class ChatPanel extends JPanel
 	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
-	
+	//refactor rename to change it for all instances of it
 	private JButton ChatButton;
 	private JButton CheckerButton;
 	private JButton LoadButton;
@@ -96,7 +96,12 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String userText = chatField.getText();
+				String response = "";
+				response = appController.interactWithChatbot(userText);
+				chatArea.append(response); //append puts stuff at the end
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());//caret -> cursor to bottom
+				chatField.setText("");
 			}
 		});
 		

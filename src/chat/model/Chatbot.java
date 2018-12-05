@@ -96,27 +96,49 @@ package chat.model;
 		
 		//learn about printf!!!! for the tests mta test
 
-
+		String answer = "";
 		int randomIndex = (int)(Math.random() * responseList.size());
-		String output = "";
-		output = "You said: \" "  + userInput1 + "\"" + " \nChatbot says: \"" + (responseList.get(randomIndex)) + "\"";
+	//	String output = "";
+	//	output = "You said: \" "  + userInput1 + "\"" + " \nChatbot says: \"" + (responseList.get(randomIndex)) + "\"";
 	//	put	chatbotSays1 = (int)(Math.random() * responseList.size());
 
 		if (userInput1 == null)
 		{
 			userInput1 = " ";
+			answer += "You should really not send null.";
 		}
-		else if (contentChecker(userInput1)) //not content?
+		else //if (contentChecker(userInput1)) //not content?
 		{
+			answer += " You said: " + userInput1 + "\n";
+			
+			if (contentChecker(userInput1))
+			{
+				answer += "You said the special words. \n";
+			}
+			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
+			
 	//		output += " You said the specials words. \n" ; //  \t = tab
-			output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"" + "You said the special words!";
+		//	output = "You said: \" "  + userInput1 + "\"" + " Chatbot says: \"" + (content) + "\"" + "You said the special words!";
 		}
 		
-		return output;
+		return answer;
 	}
 	//java -visibility, return type, name, parameters
 	//swift- public func legitimacyChecker (input : String) -> Bool
 	//swift- visibility func name (parameters) -> return type
+	
+	public boolean validityChecker(String text)
+	{
+		boolean isValid = false;
+		
+		if (text!= null && text.length() > 3)
+		{
+			isValid = true;
+		}
+		return isValid;
+	}
+	
+	
 	
 	
 	public boolean legitimacyChecker (String userInput)

@@ -56,51 +56,69 @@ public class ChatController
 //---------------------------------------------methods----------------------
 	public void start()
 	{
-		String userInput1 = "banana";
-		// String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want
-		// to talk about?");
-
-		while (!userInput1.equalsIgnoreCase("quit")) // user input != to quit
-		{
-			// userText1 = JOptionPane.showInputDialog(null, "Type 'quit' to exit.");
-			userInput1 = interactWithChatbot(userInput1);
-		}
+//		String userInput1 = "banana";
+//		// String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want
+//		// to talk about?");
+//
+//		while (!userInput1.equalsIgnoreCase("quit")) // user input != to quit
+//		{
+//			// userText1 = JOptionPane.showInputDialog(null, "Type 'quit' to exit.");
+//			userInput1 = interactWithChatbot(userInput1);
+//		}
 	}
 
 	public String interactWithChatbot(String text)
 	{
-		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
+		String userInput1 = ""; 
+				//JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
-		String output ="";
-		String chatbotSays = simplebot.processText(userInput1);
+		
+		String chatbotSays = simplebot.processText(text);
 		
 	//	chatbotSays += (int)(Math.random() * responseList.size());
 		
-		if (text == null)
-		{
-			userInput1 = "null";
-			output += "You really should not send null.";
-		}
-		
-		output += chatbot.processText(userInput1);
+//		if (text == null)
+//		{
+//			userInput1 = "null";
+//			output += "You really should not send null.";
+//		}
+		String output ="";
+		output += simplebot.processText(text);
 		return output;
 		
 //constructors initialize data members
-//		userInput1 = "You said: " + userInput1;
-//		JOptionPane.showMessageDialog(null, userInput1);
-//		// return userInput1;
-//		return userInput1;
+	//	userInput1 = "You said: " + userInput1;
+	//	JOptionPane.showMessageDialog(null, userInput1);
+	//	return userInput1;
 
 	}
 
 	public String useChatbotCheckers(String text)
 	{
+		String testedValues = "The following checkers passed: ";
+		
+		if (simplebot.contentChecker(text))
+		{
+			testedValues += "\nContent Checker";
+		}
+		
+		if (simplebot.spookyChecker(text))
+		{
+			testedValues += "\nSpooky Checker";
+		}
+
+		if (simplebot.validityChecker(text))
+		{
+			testedValues += "\nValidity Checker";
+		}
+		
+		
 		if (text.equalsIgnoreCase("spooky"))
 		{
 				text = "Halloween";
 		}
 
-		return text;
+		return testedValues;
 	}
 
 }
