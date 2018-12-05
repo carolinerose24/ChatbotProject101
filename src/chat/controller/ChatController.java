@@ -8,7 +8,7 @@ import chat.view.ChatFrame;
 
 public class ChatController
 {
-	private Chatbot simplebot;
+	private Chatbot simplebot; //MUST INITIALIZE MODEL BEFORE THE VIEW -> CHATBOT BEFORE APPFRAME!!!!!! will either crash or be blank
 	private Chatbot chatbot;
 	private ChatFrame appFrame;
 	
@@ -48,6 +48,11 @@ public class ChatController
 	{
 		this.simplebot = simplebot;
 	}
+	
+	public void setChatbot(Chatbot chatbot)
+	{
+		this.chatbot = chatbot;
+	}
 //---------------------------------------------methods----------------------
 	public void start()
 	{
@@ -66,6 +71,7 @@ public class ChatController
 	{
 		String userInput1 = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
+		String output ="";
 		String chatbotSays = simplebot.processText(userInput1);
 		
 	//	chatbotSays += (int)(Math.random() * responseList.size());
@@ -73,13 +79,17 @@ public class ChatController
 		if (text == null)
 		{
 			userInput1 = "null";
+			output += "You really should not send null.";
 		}
 		
+		output += chatbot.processText(userInput1);
+		return output;
+		
 //constructors initialize data members
-		userInput1 += "You said: " + userInput1;
-		JOptionPane.showMessageDialog(null, userInput1);
-		// return userInput1;
-		return userInput1;
+//		userInput1 = "You said: " + userInput1;
+//		JOptionPane.showMessageDialog(null, userInput1);
+//		// return userInput1;
+//		return userInput1;
 
 	}
 
