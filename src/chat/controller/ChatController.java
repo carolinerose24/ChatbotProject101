@@ -69,11 +69,11 @@ public class ChatController
 
 	public String interactWithChatbot(String text)
 	{
-		String userInput1 = ""; 
+	//	String userInput1 = ""; 
 				//JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
 
 		
-		String chatbotSays = simplebot.processText(text);
+	//	String chatbotSays = simplebot.processText(text);
 		
 	//	chatbotSays += (int)(Math.random() * responseList.size());
 		
