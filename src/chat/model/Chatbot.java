@@ -109,7 +109,7 @@ package chat.model;
 		}
 		else //if (contentChecker(userInput1)) //not content?
 		{
-			answer += " You said: " + userInput1 + "\n";
+			answer += "You said: " + userInput1 + "\n";
 			
 			if (contentChecker(userInput1))
 			{

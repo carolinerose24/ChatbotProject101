@@ -23,6 +23,7 @@ public class ChatPanel extends JPanel
 	private JButton CheckerButton;
 	private JButton LoadButton;
 	private JButton SaveButton;
+	private JButton ClearButton;
 	
 	
 	public ChatPanel(ChatController appController)
@@ -36,10 +37,12 @@ public class ChatPanel extends JPanel
 		
 		LoadButton = new JButton ("Load");
 		SaveButton = new JButton ("Save");
+		ClearButton = new JButton ("Clear");
+	
 		
 		chatField = new JTextField("Talk to the bot here", 50);
 
-		chatArea = new JTextArea("Chat Area", 20 ,50);
+		chatArea = new JTextArea("", 20 ,50);
 		
 		chatPane = new JScrollPane();
 
@@ -65,6 +68,7 @@ public class ChatPanel extends JPanel
 		this.add(CheckerButton);
 		this.add(LoadButton);
 		this.add(SaveButton);
+		this.add(ClearButton);
 		
 
 	}
@@ -86,7 +90,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, chatPane, 50, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, chatPane, 50, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatPane, -50, SpringLayout.EAST, this);
-	
+		appLayout.putConstraint(SpringLayout.NORTH, ClearButton, 0, SpringLayout.NORTH, ChatButton);
+		appLayout.putConstraint(SpringLayout.WEST, ClearButton, 6, SpringLayout.EAST, SaveButton);
 	
 	}
 	
@@ -105,7 +110,16 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		CheckerButton.addActionListener(new ActionListener() 
+		CheckerButton.addActionListener(new ActionListener() //check text
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+			//	String text = "";
+			//	useChatbotCheckers(text);
+			}
+		});
+		
+		LoadButton.addActionListener(new ActionListener() //load button-clear button?
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
@@ -113,7 +127,7 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		LoadButton.addActionListener(new ActionListener() 
+		SaveButton.addActionListener(new ActionListener() //save button
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
@@ -121,15 +135,18 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		SaveButton.addActionListener(new ActionListener() 
+		ClearButton.addActionListener(new ActionListener() //clear button/ reset button
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				chatArea.setText("");
 			}
 		});
 		
 	}
+	
+	
+	
 	
 	private void setUpScrollPane()
 	{
@@ -140,10 +157,7 @@ public class ChatPanel extends JPanel
 		chatPane.setViewportView(chatArea); //put text in the chat area 
 		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);//bc of word wrap
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
-		
 	}
-	
-	
-	
+
 	
 }
