@@ -3,6 +3,7 @@ package chat.view;
 import javax.swing.*;
 
 import chat.controller.ChatController;
+import chat.controller.IOController;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -71,6 +72,31 @@ public class ChatPanel extends JPanel
 		this.add(ClearButton);
 		
 
+	}
+	private String getPath(String choice)
+	{
+		String path = ".";
+		int result = -99;
+		JFileChooser fileChooser = new JFileChooser();
+		if (choice.equals("Save"))
+		{
+			fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			result = fileChooser.showSaveDialog(this);
+			if(result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getCurrentDirectory().getAbsolutePath();
+			}
+				
+		}
+		else
+		{
+			result = fileChooser.showOpenDialog(this);
+			if(result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+		return path;
 	}
 	
 	private void setUpLayout()
@@ -158,6 +184,8 @@ public class ChatPanel extends JPanel
 		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);//bc of word wrap
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);		
 	}
+	
+	
 
 	
 }
