@@ -54,6 +54,18 @@ public class ChatController
 		this.chatbot = chatbot;
 	}
 //---------------------------------------------methods----------------------
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	
+	private void close()
+	{
+		System.exit(0);
+	}
+	
+	
+	
 	public void start()
 	{
 //		String userInput1 = "banana";
