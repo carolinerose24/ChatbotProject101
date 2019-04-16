@@ -142,6 +142,7 @@ public class ChatPanel extends JPanel
 			{
 			//	String text = "";
 			//	useChatbotCheckers(text);
+			
 			}
 		});
 		
