@@ -95,6 +95,10 @@ public class ChatPanel extends JPanel
 		setUpScrollPane();
 		setUpButtons();
 		
+		//getMostCommonWord();
+		//call this here? needs a string input
+		
+		//set label equal to the string output
 		
 		
 	}
