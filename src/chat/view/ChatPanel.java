@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
+import chat.model.*;
+
 
 public class ChatPanel extends JPanel
 {
@@ -211,6 +213,8 @@ public class ChatPanel extends JPanel
 			//	String text = "";
 			//	useChatbotCheckers(text);
 			
+				
+				
 			}
 		});
 		

@@ -3,6 +3,7 @@ package chat.model;
 
 import chat.controller.ChatController;
 import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
 
 public class ChatTwitter
 {
@@ -12,6 +13,7 @@ public class ChatTwitter
 	public ChatTwitter(ChatController app)
 	{
 		 this.app = app;
+		 this.chatTwitter = TwitterFactory.getSingleton();
 	}
 	
 }
