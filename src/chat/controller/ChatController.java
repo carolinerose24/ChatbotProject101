@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 
+import chat.model.*;
+
 
 public class ChatController
 {
@@ -12,6 +14,7 @@ public class ChatController
 	private Chatbot chatbot;
 	private ChatFrame appFrame;
 	
+	private ChatTwitter myTwitter;
 
 	public ChatController()
 	{
@@ -132,5 +135,11 @@ public class ChatController
 
 		return testedValues;
 	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
 
 }

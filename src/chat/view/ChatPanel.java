@@ -258,7 +258,8 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String textToTweet = chatField.getText().trim();
+				appController.tweet(textToTweet);
 			}
 		});
 		
