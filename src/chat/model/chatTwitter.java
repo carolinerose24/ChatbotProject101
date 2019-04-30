@@ -178,18 +178,18 @@ public class ChatTwitter
 		}
 	}
 	
-	private void generateWordCount()
+	private void generateWordCount() //set, but not remove
 	{
 		for (String word : tweetedWords)
 		{
 			if (!wordsAndCount.containsKey(word.toLowerCase()))
 			{
-				wordsAndCount.put(word.toLowerCase(), 1);
+				wordsAndCount.put(word.toLowerCase(), 1); //this does NOT have to be unique <-- ex one (updating the value by one)
 			}
 			else
 			{
-				wordsAndCount.replace(word.toLowerCase(), wordsAndCount.get(word.toLowerCase()) + 1);
-			}
+				wordsAndCount.replace(word.toLowerCase(), wordsAndCount.get(word.toLowerCase()) + 1); //set to lower case to make it all the same
+			}//replace like set --> must have unique values (like keys)
 		}
 	}
 	
