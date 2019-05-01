@@ -1,6 +1,7 @@
 package chat.model;
  import java.util.ArrayList;
- import javax.swing.JOptionPane;
+
+import javax.swing.JOptionPane;
  public class Chatbot
 {
 	 //data, constructor, methods

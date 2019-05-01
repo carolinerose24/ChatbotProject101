@@ -1,24 +1,28 @@
 package chat.view;
 
-import javax.swing.*;
-
-import chat.controller.ChatController;
-import chat.controller.IOController;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
+import java.awt.event.ActionListener;
 
-import chat.model.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+
+import chat.controller.ChatController;
+import chat.controller.IOController;
 
 
 public class ChatPanel extends JPanel
 {
 	private SpringLayout appLayout;
-	private ChatController appController;
+	private ChatController app;
 	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
@@ -46,10 +50,10 @@ public class ChatPanel extends JPanel
 	
 	private JPanel buttonPanel;
 	
-	public ChatPanel(ChatController appController)
+	public ChatPanel(ChatController app)
 	{
 		super();
-		this.appController = appController;
+		this.app = app;
 		appLayout = new SpringLayout();
 
 	
@@ -203,7 +207,7 @@ public class ChatPanel extends JPanel
 			{
 				String userText = chatField.getText();
 				String response = "";
-				response = appController.interactWithChatbot(userText);
+				response = app.interactWithChatbot(userText);
 				chatArea.append(response); //append puts stuff at the end
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());//caret -> cursor to bottom
 				chatField.setText("");
@@ -226,7 +230,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String path = getPath("load");
+				String chatText = IOController.loadFile(app, path);
+				chatArea.setText(chatText);
 			}
 		});
 		
@@ -234,7 +240,10 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String chatText = chatArea.getText();
+				String path = getPath("save");
+				IOController.saveText(app, path, chatText);
+				chatArea.setText("Chat Saved!");
 			}
 		});
 		
@@ -246,20 +255,22 @@ public class ChatPanel extends JPanel
 //			}
 //		});
 //		
-		searchTwitterButton.addActionListener(new ActionListener() //save button
+		searchTwitterButton.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String username = chatField.getText().trim();
+				String display = app.findWords(username);
+				chatArea.append("\n\n" + display);
 			}
 		});
 		
-		tweetButton.addActionListener(new ActionListener() //save button
+		tweetButton.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String textToTweet = chatField.getText().trim();
-				appController.tweet(textToTweet);
+				app.tweet(textToTweet);
 			}
 		});
 		
